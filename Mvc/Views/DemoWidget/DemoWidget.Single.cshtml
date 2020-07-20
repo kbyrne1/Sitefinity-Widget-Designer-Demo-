@@ -1,0 +1,8 @@
+@model SitefinityWebApp.Mvc.Models.DemoWidgetModel
+<div>
+	@Model.Message
+</div>
+<div>
+    <h3>Image</h3>
+    <img src="@Model.ResponsiveImageModel.DesktopImageUrl" alt="@Model.ResponsiveImageModel.ImageAlternativeText" title="@Model.ResponsiveImageModel.ImageTitle" />
+</div>

@@ -1,0 +1,25 @@
+﻿@using Telerik.Sitefinity.Mvc;
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+    <form>
+        @Html.Partial("_TemplateSelector", "DemoWidget")
+        <div class="form-group">
+            <label for="heading-text">
+                Message
+            </label>
+            <input id="heading-text" type="text" class="form-control" ng-model="properties.Message.PropertyValue" />
+        </div>
+        <hr class="side-to-side" />
+        <div ng-show="properties.TemplateName.PropertyValue.indexOf('Responsive') != -1">
+            @Html.Partial("_ResponsiveImageSelector", "Image")
+        </div>
+        <div ng-show="properties.TemplateName.PropertyValue.indexOf('Responsive') == -1">
+            <h5>Single Image</h5>
+            <div class="form-group">
+                <label for="image-field" class="m-top-sm">Image</label>
+                <sf-image-field class="sf-Media--info modal-settings"
+                                sf-model="properties.DesktopImageId.PropertyValue"
+                                sf-provider="properties.ImageProviderName.PropertyValue"
+                                sf-media-settings="@SettingsHelpers.GetMediaSettings("Image")"></sf-image-field>
+            </div>
+        </div>
+    </form>

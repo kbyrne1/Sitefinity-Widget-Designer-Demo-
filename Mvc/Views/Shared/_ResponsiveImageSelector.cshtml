@@ -1,0 +1,21 @@
+﻿@model string
+@using Telerik.Sitefinity.Mvc;
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+@{
+    string lbl = string.IsNullOrEmpty(Model) ? "Image" : Model;
+}
+<h5>Responsive Image</h5>
+<div class="form-group">
+    <label for="image-field" class="m-top-sm">Desktop @lbl</label>
+    <sf-image-field class="sf-Media--info modal-settings"
+                    sf-model="properties.DesktopImageId.PropertyValue"
+                    sf-provider="properties.ImageProviderName.PropertyValue"
+                    sf-media-settings="@SettingsHelpers.GetMediaSettings("Image")"></sf-image-field>
+</div>
+<div class="form-group">
+    <label for="image-field" class="m-top-sm">Mobile @lbl</label>
+    <sf-image-field class="sf-Media--info modal-settings"
+                    sf-model="properties.MobileImageId.PropertyValue"
+                    sf-provider="properties.ImageProviderName.PropertyValue"
+                    sf-media-settings="@SettingsHelpers.GetMediaSettings("Image")"></sf-image-field>
+</div>
